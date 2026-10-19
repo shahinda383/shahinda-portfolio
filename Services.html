@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Services — Shahinda Ibrahim</title>
+<meta name="description" content="AI/ML services offered by Shahinda Ibrahim: machine learning, computer vision, generative AI & LLMs, NLP, data analytics and MLOps.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+<style>
+.services-hero{padding:calc(var(--nav-h) + 64px) 0 40px;max-width:720px;}
+.service-block{border-top:1px solid var(--line);padding:52px 0;}
+.service-block:last-child{border-bottom:1px solid var(--line);}
+.service-head{display:flex;justify-content:space-between;align-items:flex-start;gap:24px;flex-wrap:wrap;margin-bottom:28px;}
+.service-head h2{font-size:1.6rem;margin-bottom:6px;}
+.service-num{font-family:'JetBrains Mono',monospace;color:var(--accent);font-size:.85rem;}
+.service-offer-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+.offer-item{display:flex;align-items:flex-start;gap:10px;padding:14px 16px;border-radius:12px;background:var(--surface);border:1px solid var(--line);font-size:.9rem;}
+.offer-item svg{width:16px;height:16px;flex-shrink:0;margin-top:3px;color:var(--accent);}
+@media (max-width:900px){.service-offer-grid{grid-template-columns:1fr 1fr;}}
+@media (max-width:600px){.service-offer-grid{grid-template-columns:1fr;}}
+
+.process-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;}
+.process-step{padding:26px;border-radius:16px;background:var(--surface);border:1px solid var(--line);}
+.process-step .num{font-family:'JetBrains Mono',monospace;color:var(--accent);font-size:.85rem;margin-bottom:12px;display:block;}
+@media (max-width:900px){.process-steps{grid-template-columns:1fr 1fr;}}
+@media (max-width:600px){.process-steps{grid-template-columns:1fr;}}
+</style>
+
+<style>
+/* =========================================================
+   SHAHINDA IBRAHIM — AI & ML PORTFOLIO · DESIGN SYSTEM
+   Palette: white / graphite / signal-blue
+   Display: Space Grotesk · Body: Inter · Data/Mono: JetBrains Mono
+========================================================= */
+
+:root{
+  --blue-900:#061024;
+  --blue-800:#0a1c3d;
+  --blue-700:#123268;
+  --blue-500:#2f6fff;
+  --blue-400:#4f8dff;
+  --cyan-400:#28d9ff;
+
+  --bg:#f6f8fc;
+  --surface:#ffffff;
+  --surface-2:#eef2f9;
+  --line:#dde4f0;
+  --text:#0b1220;
+  --muted:#5b6478;
+  --accent:var(--blue-500);
+  --accent-2:var(--cyan-400);
+  --shadow: 0 20px 60px -25px rgba(11,18,32,.25);
+  --radius:18px;
+  --nav-h:76px;
+}
+
+[data-theme="dark"]{
+  --bg:#060b14;
+  --surface:#0d1526;
+  --surface-2:#101b30;
+  --line:#1c2a44;
+  --text:#e8edf7;
+  --muted:#8b95ac;
+  --shadow: 0 20px 70px -20px rgba(0,0,0,.6);
+}
+
+*,*::before,*::after{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family:'Inter',sans-serif;
+  font-size:16px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  transition:background .4s ease,color .4s ease;
+  overflow-x:hidden;
+}
+h1,h2,h3,h4{
+  font-family:'Space Grotesk',sans-serif;
+  font-weight:600;
+  line-height:1.12;
+  margin:0 0 .5em;
+  letter-spacing:-0.01em;
+}
+p{margin:0 0 1em;color:var(--muted);}
+a{color:inherit;text-decoration:none;}
+img{max-width:100%;display:block;}
+.mono{font-family:'JetBrains Mono',monospace;}
+.container{max-width:1180px;margin:0 auto;padding:0 32px;}
+section{position:relative;padding:120px 0;}
+::selection{background:var(--accent);color:#fff;}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce){
+  *{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important;scroll-behavior:auto !important;}
+}
+
+/* ---------- Skip link ---------- */
+.skip-link{
+  position:absolute;top:-60px;left:16px;background:var(--accent);color:#fff;
+  padding:10px 18px;border-radius:8px;z-index:9999;transition:top .2s;
+}
+.skip-link:focus{top:16px;}
+
+/* ---------- Nav ---------- */
+.site-nav{
+  position:fixed;top:0;left:0;right:0;z-index:1000;
+  height:var(--nav-h);display:flex;align-items:center;
+  background:color-mix(in srgb, var(--bg) 78%, transparent);
+  backdrop-filter:blur(16px) saturate(140%);
+  -webkit-backdrop-filter:blur(16px) saturate(140%);
+  border-bottom:1px solid transparent;
+  transition:border-color .3s ease, background .3s ease;
+}
+.site-nav.scrolled{border-bottom-color:var(--line);}
+.nav-inner{width:100%;display:flex;align-items:center;justify-content:space-between;}
+.brand{
+  font-family:'JetBrains Mono',monospace;font-weight:700;font-size:1.15rem;
+  display:flex;align-items:center;gap:10px;color:var(--text);
+}
+.brand-dot{width:9px;height:9px;border-radius:50%;background:var(--accent);
+  box-shadow:0 0 0 4px color-mix(in srgb, var(--accent) 20%, transparent);}
+.nav-links{display:flex;align-items:center;gap:2px;list-style:none;margin:0;padding:0;}
+.nav-links a{
+  position:relative;padding:10px 16px;font-size:.92rem;font-weight:500;color:var(--muted);
+  border-radius:999px;transition:color .25s ease;
+}
+.nav-links a:hover,.nav-links a:focus-visible{color:var(--text);}
+.nav-links a.active{color:var(--text);}
+.nav-links a.active::after{
+  content:"";position:absolute;left:16px;right:16px;bottom:4px;height:2px;
+  background:linear-gradient(90deg,var(--accent),var(--accent-2));border-radius:2px;
+}
+.nav-right{display:flex;align-items:center;gap:14px;}
+.theme-toggle{
+  width:44px;height:44px;border-radius:50%;border:1px solid var(--line);
+  background:var(--surface);display:flex;align-items:center;justify-content:center;
+  cursor:pointer;color:var(--text);transition:transform .3s ease, background .3s ease;
+}
+.theme-toggle:hover{transform:rotate(20deg);}
+.theme-toggle svg{width:19px;height:19px;}
+.nav-cta{
+  padding:11px 22px;border-radius:999px;font-weight:600;font-size:.9rem;
+  background:linear-gradient(120deg,var(--accent),var(--accent-2));color:#fff;
+  box-shadow:0 10px 30px -12px color-mix(in srgb, var(--accent) 70%, transparent);
+  transition:transform .25s ease, box-shadow .25s ease;
+}
+.nav-cta:hover{transform:translateY(-2px);box-shadow:0 16px 34px -12px color-mix(in srgb, var(--accent) 80%, transparent);}
+.nav-toggle{display:none;background:none;border:none;color:var(--text);cursor:pointer;padding:8px;}
+.nav-toggle svg{width:26px;height:26px;}
+
+@media (max-width:920px){
+  .nav-links{position:fixed;inset:var(--nav-h) 0 0 0;flex-direction:column;
+    background:var(--bg);padding:24px;gap:6px;align-items:stretch;
+    transform:translateX(100%);transition:transform .35s ease;overflow-y:auto;}
+  .nav-links.open{transform:translateX(0);}
+  .nav-links a{padding:16px 18px;font-size:1.05rem;}
+  .nav-toggle{display:flex;}
+  .nav-cta{display:none;}
+}
+
+/* ---------- Buttons ---------- */
+.btn{
+  display:inline-flex;align-items:center;gap:10px;padding:15px 30px;
+  border-radius:999px;font-weight:600;font-size:.95rem;cursor:pointer;border:none;
+  transition:transform .25s ease, box-shadow .25s ease, background .25s ease;
+}
+.btn-primary{
+  background:linear-gradient(120deg,var(--accent),var(--accent-2));color:#fff;
+  box-shadow:0 14px 34px -14px color-mix(in srgb, var(--accent) 70%, transparent);
+}
+.btn-primary:hover{transform:translateY(-3px);}
+.btn-ghost{background:transparent;border:1px solid var(--line);color:var(--text);}
+.btn-ghost:hover{border-color:var(--accent);color:var(--accent);}
+
+/* ---------- Eyebrow / labels ---------- */
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;font-family:'JetBrains Mono',monospace;
+  font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);
+  margin-bottom:18px;
+}
+.eyebrow::before{content:"";width:22px;height:1px;background:var(--accent);}
+
+/* ---------- Reveal animation ---------- */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1);}
+.reveal.in{opacity:1;transform:translateY(0);}
+.reveal-delay-1{transition-delay:.1s;}
+.reveal-delay-2{transition-delay:.2s;}
+.reveal-delay-3{transition-delay:.3s;}
+
+/* ---------- Cards / surfaces ---------- */
+.card{
+  background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+  padding:32px;transition:transform .35s ease, box-shadow .35s ease, border-color .35s ease;
+}
+.card:hover{transform:translateY(-6px);box-shadow:var(--shadow);border-color:color-mix(in srgb, var(--accent) 40%, var(--line));}
+
+/* ---------- Neural canvas hero backdrop ---------- */
+.neural-canvas{position:absolute;inset:0;width:100%;height:100%;z-index:0;opacity:.55;}
+[data-theme="dark"] .neural-canvas{opacity:.8;}
+
+/* ---------- Footer ---------- */
+.site-footer{border-top:1px solid var(--line);padding:64px 0 32px;background:var(--surface-2);}
+.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;margin-bottom:48px;}
+.footer-links{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px;}
+.footer-links a{color:var(--muted);font-size:.92rem;transition:color .2s ease;}
+.footer-links a:hover{color:var(--accent);}
+.footer-bottom{
+  display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;
+  padding-top:28px;border-top:1px solid var(--line);color:var(--muted);font-size:.85rem;
+}
+.footer-title{font-family:'JetBrains Mono',monospace;font-size:.8rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:16px;}
+@media (max-width:800px){.footer-grid{grid-template-columns:1fr;gap:32px;}}
+
+/* ---------- Scroll progress ---------- */
+.scroll-progress{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--accent),var(--accent-2));z-index:2000;width:0%;}
+
+/* ---------- Utility ---------- */
+.grad-text{
+  background:linear-gradient(120deg,var(--text) 30%, var(--accent) 70%, var(--accent-2));
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.section-head{max-width:640px;margin-bottom:64px;}
+.badge{
+  display:inline-flex;align-items:center;gap:6px;padding:6px 14px;border-radius:999px;
+  background:var(--surface-2);border:1px solid var(--line);font-size:.78rem;color:var(--muted);
+  font-family:'JetBrains Mono',monospace;
+}
+
+</style>
+</head>
+<body>
+<a href="#main" class="skip-link">Skip to content</a>
+
+<div class="scroll-progress"></div>
+<nav class="site-nav" id="site-nav">
+  <div class="container nav-inner">
+    <a href="index.html" class="brand"><span class="brand-dot"></span>SHAHINDA.AI</a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html" class="">Home</a></li>
+<li><a href="about.html" class="">About</a></li>
+<li><a href="projects.html" class="">Projects</a></li>
+<li><a href="services.html" class="active">Services</a></li>
+<li><a href="contact.html" class="">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <button class="theme-toggle" aria-label="Toggle color theme"></button>
+      <a href="contact.html" class="nav-cta">Let's talk</a>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<main id="main">
+
+<section class="services-hero" style="padding-top:calc(var(--nav-h) + 64px);">
+  <div class="container">
+    <div class="eyebrow reveal">Services</div>
+    <h1 class="reveal reveal-delay-1" style="font-size:clamp(2.2rem,4.6vw,3.2rem);">Six ways I can help your team <span class="grad-text">ship AI that works.</span></h1>
+    <p class="reveal reveal-delay-2" style="font-size:1.05rem;">Whether you need a single model, a full pipeline, or someone to own the AI feature end-to-end &mdash; here's what I bring to the table.</p>
+  </div>
+</section>
+
+<section style="padding-top:0;">
+  <div class="container">
+    
+    <div class="service-block reveal">
+      <div class="service-head">
+        <div>
+          <span class="service-num">01 / 06</span>
+          <h2>Machine Learning Solutions</h2>
+          <p style="max-width:520px;">Turning historical data into reliable predictions and decisions.</p>
+        </div>
+      </div>
+      <div class="service-offer-grid"><div class="offer-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span>Predictive modeling</span></div><div class="offer-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span>Classification & regression</span></div><div class="offer-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span>Customer churn prediction</span></div><div class="offer-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span>Recommendation systems</span></div><div class="offer-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span>Forecasting</span></div><div class="offer-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span>Anomaly detection</span></div></div>
+    </div>
+    <div class="service-block reveal">
+      <div class="service-head">
+        <div>
+          <span class="service-num">02 / 06</span>
+          <h2>Deep Learning & Computer Vision</h2>
+          <p style="max-width:520px;">Teaching systems to understand images the way a specialist would.</p>
+        </div>
+      </div>
+      <div class="service-offer-grid"><div class="offer-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span>Image classification</span></div><div class="offer-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span>Object detection</span></div><div class="offer-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span>Image segmentation</span></div><div class="offer-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span>OCR</span></div><div class="offer-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span>Medical image analysis</span></div><div class="offer-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span>Computer vision APIs</span></div></div>
+    </div>
+    <div class="service-block reveal">
+      <div class="service-head">
+        <div>
+          <span class="service-num">03 / 06</span>
+          <h2>Generative AI & LLM Solutions</h2>
+          <p style="max-width:520px;">Building applications on top of large language models that stay grounded.</p>
+        </div>
+      </div>
+      <div class="service-offer-grid"><div class="offer-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span>LLM applications</span></div><div class="offer-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span>Prompt engineering</span></div><div class="offer-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span>RAG systems</span></div><div class="offer-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span>AI knowledge bases</span></div><div class="offer-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span>Document Q&A</span></div><div class="offer-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span>AI agents & tool calling</span></div></div>
+    </div>
+    <div class="service-block reveal">
+      <div class="service-head">
+        <div>
+          <span class="service-num">04 / 06</span>
+          <h2>NLP Solutions</h2>
+          <p style="max-width:520px;">Making sense of unstructured text at scale.</p>
+        </div>
+      </div>
+      <div class="service-offer-grid"><div class="offer-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span>Text classification</span></div><div class="offer-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span>Sentiment analysis</span></div><div class="offer-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span>Named entity recognition</span></div><div class="offer-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span>Text summarization</span></div><div class="offer-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span>Semantic search</span></div><div class="offer-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span>Information extraction</span></div></div>
+    </div>
+    <div class="service-block reveal">
+      <div class="service-head">
+        <div>
+          <span class="service-num">05 / 06</span>
+          <h2>Data & AI Analytics</h2>
+          <p style="max-width:520px;">The unglamorous, essential work that makes every model possible.</p>
+        </div>
+      </div>
+      <div class="service-offer-grid"><div class="offer-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span>Data cleaning & preprocessing</span></div><div class="offer-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span>Exploratory data analysis</span></div><div class="offer-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span>Feature engineering</span></div><div class="offer-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span>Statistical analysis</span></div><div class="offer-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span>ML-ready data pipelines</span></div><div class="offer-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span>Business insight systems</span></div></div>
+    </div>
+    <div class="service-block reveal">
+      <div class="service-head">
+        <div>
+          <span class="service-num">06 / 06</span>
+          <h2>AI Model Deployment & MLOps</h2>
+          <p style="max-width:520px;">Getting a model from a notebook into something a team can rely on.</p>
+        </div>
+      </div>
+      <div class="service-offer-grid"><div class="offer-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span>FastAPI model serving</span></div><div class="offer-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span>Dockerization</span></div><div class="offer-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span>Cloud deployment</span></div><div class="offer-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span>ML pipelines</span></div><div class="offer-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span>Model monitoring</span></div><div class="offer-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span>CI/CD for ML</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow">Process</div>
+      <h2>How an engagement typically runs.</h2>
+    </div>
+    <div class="process-steps">
+      <div class="process-step reveal"><span class="num">01</span><h4>Discovery</h4><p>Understand the problem, the data available, and what success looks like.</p></div>
+      <div class="process-step reveal reveal-delay-1"><span class="num">02</span><h4>Build</h4><p>Prototype fast, validate rigorously, iterate with real feedback.</p></div>
+      <div class="process-step reveal reveal-delay-2"><span class="num">03</span><h4>Deploy</h4><p>Ship as a documented, containerized service ready for production.</p></div>
+      <div class="process-step reveal reveal-delay-3"><span class="num">04</span><h4>Support</h4><p>Monitor performance and hand off with clear documentation.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="cta-banner reveal" style="background:linear-gradient(120deg,var(--blue-900),var(--blue-700));border-radius:28px;padding:64px 40px;text-align:center;color:#fff;">
+      <h2 style="color:#fff;">Have a project in mind?</h2>
+      <p style="color:rgba(255,255,255,.75);max-width:480px;margin:0 auto 28px;">Tell me what you're trying to build — I'll tell you honestly whether it's a good fit.</p>
+      <a href="contact.html" class="btn btn-primary" style="background:#fff;color:var(--blue-900);box-shadow:none;">Start the conversation</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a href="index.html" class="brand"><span class="brand-dot"></span>SHAHINDA.AI</a>
+        <p style="max-width:320px;margin-top:16px;">AI &amp; Machine Learning Engineer building intelligent systems &mdash; from predictive models to production-ready LLM applications.</p>
+      </div>
+      <div>
+        <div class="footer-title">Navigate</div>
+        <ul class="footer-links">
+          <li><a href="about.html">About</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-title">Elsewhere</div>
+        <ul class="footer-links">
+          <li><a href="#" target="_blank" rel="noopener">LinkedIn</a></li>
+<li><a href="#" target="_blank" rel="noopener">GitHub</a></li>
+<li><a href="#" target="_blank" rel="noopener">Kaggle</a></li>
+<li><a href="#" target="_blank" rel="noopener">Upwork</a></li>
+<li><a href="#" target="_blank" rel="noopener">Freelancer</a></li>
+<li><a href="#" target="_blank" rel="noopener">Khamsat</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; <span id="year"></span> Shahinda Ibrahim. All rights reserved.</span>
+      <span class="mono" style="color:var(--accent);">Building intelligent systems, one model at a time.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* =========================================================
+   SHAHINDA IBRAHIM — AI & ML PORTFOLIO · SHARED BEHAVIOR
+========================================================= */
+
+/* ---- Theme (light / dark) ---- */
+(function initTheme(){
+  const saved = localStorage.getItem('si-theme');
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const theme = saved || (prefersDark ? 'dark' : 'light');
+  document.documentElement.setAttribute('data-theme', theme);
+})();
+
+function setupThemeToggle(){
+  const btn = document.querySelector('.theme-toggle');
+  if(!btn) return;
+  const sync = () => {
+    const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+    btn.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+    btn.innerHTML = isDark
+      ? '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>'
+      : '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>';
+  };
+  sync();
+  btn.addEventListener('click', () => {
+    const current = document.documentElement.getAttribute('data-theme');
+    const next = current === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', next);
+    localStorage.setItem('si-theme', next);
+    sync();
+  });
+}
+
+/* ---- Mobile nav ---- */
+function setupMobileNav(){
+  const toggle = document.querySelector('.nav-toggle');
+  const links = document.querySelector('.nav-links');
+  if(!toggle || !links) return;
+  toggle.addEventListener('click', () => {
+    const open = links.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open);
+  });
+  links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    links.classList.remove('open');
+    toggle.setAttribute('aria-expanded', 'false');
+  }));
+}
+
+/* ---- Nav scroll state + scroll progress bar ---- */
+function setupScrollFx(){
+  const nav = document.querySelector('.site-nav');
+  const bar = document.querySelector('.scroll-progress');
+  const onScroll = () => {
+    const y = window.scrollY;
+    if(nav) nav.classList.toggle('scrolled', y > 8);
+    if(bar){
+      const h = document.documentElement.scrollHeight - window.innerHeight;
+      bar.style.width = (h > 0 ? (y / h) * 100 : 0) + '%';
+    }
+  };
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+}
+
+/* ---- Scroll reveal ---- */
+function setupReveal(){
+  const items = document.querySelectorAll('.reveal');
+  if(!items.length) return;
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, {threshold:.15, rootMargin:'0px 0px -60px 0px'});
+  items.forEach(i => io.observe(i));
+}
+
+/* ---- Animated counters ---- */
+function setupCounters(){
+  const els = document.querySelectorAll('[data-count]');
+  if(!els.length) return;
+  const animate = (el) => {
+    const target = parseFloat(el.getAttribute('data-count'));
+    const suffix = el.getAttribute('data-suffix') || '';
+    const dur = 1400; let start = null;
+    const step = (ts) => {
+      if(!start) start = ts;
+      const p = Math.min((ts - start) / dur, 1);
+      const eased = 1 - Math.pow(1 - p, 3);
+      const val = target < 10 ? (target * eased).toFixed(1) : Math.floor(target * eased);
+      el.textContent = val + suffix;
+      if(p < 1) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  };
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if(e.isIntersecting){ animate(e.target); io.unobserve(e.target); } });
+  }, {threshold:.6});
+  els.forEach(i => io.observe(i));
+}
+
+/* ---- Neural network ambient canvas ---- */
+function setupNeuralCanvas(){
+  const canvas = document.querySelector('.neural-canvas');
+  if(!canvas) return;
+  const ctx = canvas.getContext('2d');
+  let w, h, nodes, raf;
+  const DPR = Math.min(window.devicePixelRatio || 1, 2);
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function resize(){
+    w = canvas.clientWidth; h = canvas.clientHeight;
+    canvas.width = w * DPR; canvas.height = h * DPR;
+    ctx.setTransform(DPR,0,0,DPR,0,0);
+    const count = Math.max(28, Math.min(70, Math.floor((w*h)/26000)));
+    nodes = Array.from({length:count}, () => ({
+      x: Math.random()*w, y: Math.random()*h,
+      vx: (Math.random()-.5)*.25, vy: (Math.random()-.5)*.25,
+      r: Math.random()*1.6 + 1
+    }));
+  }
+
+  function accent(){
+    const s = getComputedStyle(document.documentElement);
+    return {a: s.getPropertyValue('--accent').trim() || '#2f6fff', b: s.getPropertyValue('--accent-2').trim() || '#28d9ff'};
+  }
+
+  function draw(){
+    ctx.clearRect(0,0,w,h);
+    const {a,b} = accent();
+    const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+    nodes.forEach(n => {
+      n.x += n.vx; n.y += n.vy;
+      if(n.x < 0 || n.x > w) n.vx *= -1;
+      if(n.y < 0 || n.y > h) n.vy *= -1;
+    });
+    for(let i=0;i<nodes.length;i++){
+      for(let j=i+1;j<nodes.length;j++){
+        const dx = nodes[i].x-nodes[j].x, dy = nodes[i].y-nodes[j].y;
+        const dist = Math.sqrt(dx*dx+dy*dy);
+        const maxDist = 150;
+        if(dist < maxDist){
+          ctx.strokeStyle = isDark
+            ? `rgba(79,141,255,${(1-dist/maxDist)*0.35})`
+            : `rgba(47,111,255,${(1-dist/maxDist)*0.22})`;
+          ctx.lineWidth = 1;
+          ctx.beginPath();
+          ctx.moveTo(nodes[i].x, nodes[i].y);
+          ctx.lineTo(nodes[j].x, nodes[j].y);
+          ctx.stroke();
+        }
+      }
+    }
+    nodes.forEach(n => {
+      ctx.beginPath();
+      ctx.arc(n.x, n.y, n.r, 0, Math.PI*2);
+      ctx.fillStyle = isDark ? 'rgba(126,178,255,0.85)' : 'rgba(47,111,255,0.65)';
+      ctx.fill();
+    });
+    if(!reduceMotion) raf = requestAnimationFrame(draw);
+  }
+
+  resize();
+  draw();
+  window.addEventListener('resize', () => { cancelAnimationFrame(raf); resize(); draw(); });
+}
+
+/* ---- Init ---- */
+document.addEventListener('DOMContentLoaded', () => {
+  setupThemeToggle();
+  setupMobileNav();
+  setupScrollFx();
+  setupReveal();
+  setupCounters();
+  setupNeuralCanvas();
+});
+
+document.getElementById('year').textContent = new Date().getFullYear();
+
+</script>
+</body>
+</html>
